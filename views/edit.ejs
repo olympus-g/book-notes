@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/edit.css" />
+    <title>Edit Book</title>
+</head>
+
+<body>
+
+    <div class="container py-5">
+        <div class="form-wrapper mx-auto rounded p-5 bg-white shadow-sm">
+            <h1 class="text-center mb-4">Edit Book</h1>
+
+            <form action="/update" method="POST" class="book-form">
+                <input type="hidden" name="id" value="<%= book.id %>" />
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="title" id="title" value="<%= book.title %>" class="form-control"
+                            required />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="author" class="form-label">Author</label>
+                        <input type="text" name="author" id="author" value="<%= book.author %>" class="form-control"
+                            required />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="isbn" class="form-label">ISBN</label>
+                        <input type="text" name="isbn" id="isbn" value="<%= book.isbn %>" class="form-control"
+                            required />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="date" class="form-label">Date Read</label>
+                        <input type="date" name="date" id="date"
+                            value="<%= book.date_read.toISOString().split('T')[0] %>" class="form-control" required />
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label d-block  mb-2">Rating</label>
+                        <div class="rating mx-auto">
+                            <% for (let i=5; i>= 1; i--) { %>
+                                <input id="star<%= i %>" name="star" type="radio" value="<%= i %>"
+                                    class="radio-btn hide" <%=book.rating==i ? "checked" : "" %>
+                                />
+                                <label for="star<%= i %>">☆</label>
+                                <% } %>
+                                    <div class="clear"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="review" class="form-label">Review</label>
+                        <textarea rows="6" name="review" id="review" class="form-control"
+                            required><%= book.review %></textarea>
+                    </div>
+
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-success btn-lg px-5 mt-4">
+                            Save Changes
+                        </button>
+                        <a href="/" class="btn btn-outline-secondary btn-lg px-5 mt-4 ms-2">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

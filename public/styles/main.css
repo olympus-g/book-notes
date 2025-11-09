@@ -1,0 +1,47 @@
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.book {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-cover {
+  max-width: 140px;
+  height: auto;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.rating-static {
+  font-size: 1.3rem;
+  color: #FFD700;
+}
+
+.review {
+  font-size: 1rem;
+  color: #333;
+
+  word-break: break-word;
+}
+
+.book .col {
+  min-width: 0;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/new.css">
+    <title>Book Notes</title>
+</head>
+<body>
+
+   <div class="container py-5">
+    <div class="form-wrapper mx-auto  rounded p-5 bg-white">
+      <h1 class="text-center mb-4"> Add a New Book</h1>
+
+      <form action="/add" method="POST" class="book-form">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" id="title" placeholder="House of Leaves" class="form-control" required/>
+          </div>
+
+          <div class="col-md-6">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" name="author" id="author" placeholder="Mark Z. Danielewski" class="form-control"required />
+          </div>
+
+          <div class="col-md-6">
+            <label for="isbn" class="form-label">ISBN</label>
+            <input type="text" name="isbn" id="isbn" placeholder="0375703764" class="form-control" required/>
+          </div>
+
+          <div class="col-md-6">
+            <label for="date" class="form-label">Date Read</label>
+            <input type="date" name="date" id="date" class="form-control"  required />
+          </div>
+
+          <div class="col-12">
+            <label for="rating" class="form-label">How would you rate this book?</label>
+            <div class="rating mx-auto">
+              <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" required />
+              <label for="star5">☆</label>
+
+              <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+              <label for="star4">☆</label>
+
+              <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+              <label for="star3">☆</label>
+
+              <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+              <label for="star2">☆</label>
+
+              <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+              <label for="star1">☆</label>
+
+              <div class="clear"></div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="review" class="form-label">Review</label>
+            <textarea rows="6" name="review" id="review" placeholder="Write your review..."
+              class="form-control"></textarea>
+          </div>
+
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary btn-lg px-5 mt-3">
+              Submit Book
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
